@@ -1,0 +1,18 @@
+.cards-wrap {
+  min-height: 100vh;
+  overflow: auto;
+  padding: 75px 0;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+}
+.flip-blocks-wrap{
+  -ms-flex-direction: row;
+  flex-direction: row;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}

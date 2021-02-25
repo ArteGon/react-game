@@ -1,0 +1,47 @@
+@font-face{
+	font-family: IntroDemo-BlackCapsInline;
+	src: url(../fonts/intro/IntroDemo-BlackCapsInline.otf);
+}
+
+/* Шрифты */
+a{
+	cursor: pointer;	
+	font-family: 'IntroDemo-BlackCapsInline';
+	font-style: normal;
+}
+h1{
+	font-family: 'IntroDemo-BlackCapsInline';
+	font-style: normal;
+	font-weight: bold;
+}
+h2{
+	font-family: 'IntroDemo-BlackCapsInline';
+	font-style: normal;
+	font-weight: bold;
+}
+h3{
+	font-family: 'IntroDemo-BlackCapsInline';
+	font-style: normal;
+	font-weight: bold;
+}
+p{
+	font-family: 'IntroDemo-BlackCapsInline';
+	font-style: normal;
+}
+section{
+	font-family: 'IntroDemo-BlackCapsInline';
+	font-style: normal;
+}
+div{
+	font-family: 'IntroDemo-BlackCapsInline';
+	font-style: normal;
+}
+button{
+	font-family: 'IntroDemo-BlackCapsInline';
+	font-style: normal;
+  cursor: pointer;
+}
+input, textarea{
+	font-family: 'IntroDemo-BlackCapsInline';
+	font-style: normal;
+}

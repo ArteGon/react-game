@@ -1,0 +1,31 @@
+header {
+  width: 100% !important;
+  height: 75px;
+  background: rgb(50, 212, 226, .5);
+  padding-bottom: 0;
+  z-index: 999;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+}
+.header-blocks-wrap {
+  -ms-flex-direction: row;
+  flex-direction: row;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.header-blocks-wrap .header-logo, .header-blocks-wrap .header-name-game, .header-blocks-wrap .header-game-options {
+  position: relative;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+.header-blocks-wrap .header-name-game p {
+  font-size: 48px;
+  font-weight: 700;
+}

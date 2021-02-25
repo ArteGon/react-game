@@ -1,0 +1,49 @@
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 75px;
+  background: rgb(50, 212, 226, .5);
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+}
+.footer-blocks-wrap {
+  -ms-flex-direction: row;
+  flex-direction: row;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.footer-blocks-wrap .footer-rs-logo, .footer-blocks-wrap .date-game-create, .footer-blocks-wrap .footer-link-repo {
+  position: relative;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+.footer-blocks-wrap .footer-rs-logo img {
+  height: 50px;
+}
+
+.footer-blocks-wrap .date-game-create {
+  text-align: center;
+}
+.footer-blocks-wrap .date-game-create p{
+  font-size: 20px;
+  font-weight: 700;
+}
+.footer-blocks-wrap .date-game-create p span svg{
+  margin-right: 5px;
+}
+
+.footer-blocks-wrap .footer-link-repo {
+  text-align: right;
+}
+.footer-blocks-wrap .footer-link-repo a{
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+}
