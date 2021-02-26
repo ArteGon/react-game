@@ -1,19 +1,19 @@
 const cards = [
 	{
 		id: 0,
-		src: 'apple.jpg',
+		src: '0.png',
 	},
 	{
 		id: 1,
-		src: 'apple.jpg',
+		src: '1.png',
 	},
 	{
 		id: 2,
-		src: 'apple.jpg',
+		src: '2.png',
 	},
 	{
 		id: 3,
-		src: 'apple.jpg',
+		src: '3.png',
 	},
 ];
 

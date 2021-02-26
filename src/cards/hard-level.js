@@ -1,59 +1,59 @@
 const cards = [
 	{
 		id: 0,
-		src: 'apple.jpg',
+		src: '0.png',
 	},
 	{
 		id: 1,
-		src: 'apple.jpg',
+		src: '1.png',
 	},
 	{
 		id: 2,
-		src: 'apple.jpg',
+		src: '2.png',
 	},
 	{
 		id: 3,
-		src: 'apple.jpg',
+		src: '3.png',
 	},
 	{
 		id: 4,
-		src: 'apple.jpg',
+		src: '4.png',
 	},
 	{
 		id: 5,
-		src: 'apple.jpg',
+		src: '5.png',
 	},
 	{
 		id: 6,
-		src: 'apple.jpg',
+		src: '6.png',
 	},
 	{
 		id: 7,
-		src: 'apple.jpg',
+		src: '7.png',
 	},
 	{
 		id: 8,
-		src: 'apple.jpg',
+		src: '8.png',
 	},
 	{
 		id: 9,
-		src: 'apple.jpg',
+		src: '9.png',
 	},
 	{
 		id: 10,
-		src: 'apple.jpg',
+		src: '10.png',
 	},
 	{
 		id: 11,
-		src: 'apple.jpg',
+		src: '11.png',
 	},
 	{
 		id: 12,
-		src: 'apple.jpg',
+		src: '12.png',
 	},
 	{
 		id: 13,
-		src: 'apple.jpg',
+		src: '13.png',
 	},
 ];
 
