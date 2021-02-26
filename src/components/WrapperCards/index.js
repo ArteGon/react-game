@@ -59,13 +59,15 @@ class WrapperCards extends React.Component {
     firstCard.setState(() => {
       return {
         isFlip : true,
-        canFlip : false
+        canFlip : false,
+        isFindCouple : true
       }  
     });
     secondCard.setState(() => {
       return {
         isFlip : true,
-        canFlip : false
+        canFlip : false,
+        isFindCouple : true
       }  
     });
     this.clearFirstCard();

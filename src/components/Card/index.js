@@ -2,7 +2,7 @@ import React from 'react';
 import cl from 'classnames';
 import '../../css/flip.css';
 import './style.css';
-import { QuestionCircleOutlined } from '@ant-design/icons';
+import { QuestionCircleOutlined, CheckSquareOutlined } from '@ant-design/icons';
 
 class Card extends React.Component {
   constructor(props) {
@@ -11,12 +11,13 @@ class Card extends React.Component {
     this.state = {
       id : this.props.cardId,
       isFlip : false,
-      canFlip : true
+      canFlip : true,
+      isFindCouple : false
     };
   };
 
   render() {
-    const {isFlip, canFlip} = this.state;
+    const {isFlip, canFlip, isFindCouple} = this.state;
     return (
       <div 
         className={ 
@@ -25,7 +26,8 @@ class Card extends React.Component {
             'flip-block', 
             this.props.difficultGame,
             {
-              ['is-flip'] : isFlip
+              ['is-flip'] : isFlip,
+              ['is-find-couple'] : isFindCouple
             },
           ) 
         }
@@ -37,6 +39,7 @@ class Card extends React.Component {
           </div>  
           <div className={ cl('back-side') }>
             <img src={require(`./img/${this.props.cardImageSrc}`).default} />
+            {isFindCouple ? <CheckSquareOutlined /> : null}
           </div>  
         </div>  
       </div>
