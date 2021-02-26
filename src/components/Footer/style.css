@@ -1,4 +1,3 @@
-
 footer {
   position: fixed;
   bottom: 0;
@@ -46,4 +45,15 @@ footer {
   font-size: 20px;
   font-weight: 700;
   color: #000;
+}
+
+/* Убираем footer при полном экране */
+:-webkit-full-screen footer{/*WebKit, Opera 15+*/
+  display: none;
+}
+:-moz-full-screen footer{/*FireFox*/
+  display: none;
+}
+:full-screen footer{/*Opera 12.15-, Blink, w3c standard*/
+  display: none;
 }

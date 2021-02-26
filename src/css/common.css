@@ -82,11 +82,16 @@ body {
   transform: translate(4px, 4px);
 }
 
-.btn {
+.btn-blue {
   color: #232323;
 }
 .btn-blue::before {
   background: #32D4E2;
+}
+
+button:focus, .btn:focus, a:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 /* title */

@@ -29,3 +29,14 @@ header {
   font-size: 48px;
   font-weight: 700;
 }
+
+.header-blocks-wrap .header-game-options button.fullscreen-button{
+  border: none;
+  font-size: 28px;
+  padding: 0;
+}
+.header-blocks-wrap .header-game-options button.setting-button{
+  border: none;
+  font-size: 28px;
+  padding: 0;
+}
