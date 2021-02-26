@@ -10,11 +10,22 @@ class Card extends React.Component {
 
     this.state = {
       id : this.props.cardId,
-      isFlip : false,
-      canFlip : true,
+      isFlip : true,
+      canFlip : false,
       isFindCouple : false
     };
   };
+
+  firstFlipCard = () => {
+    this.setState({
+      isFlip : !this.state.isFlip,
+      canFlip : !this.state.canFlip
+    });
+  };
+
+  componentDidMount() {
+    setTimeout(this.firstFlipCard, 2000); // первое закрытие всех карточек
+  }
 
   render() {
     const {isFlip, canFlip, isFindCouple} = this.state;
