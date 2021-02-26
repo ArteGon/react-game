@@ -28,7 +28,7 @@ class Footer extends React.Component {
               </p>
             </div>  
             <div className={cl('footer-link-repo')}>
-              <a href="#" target="_blank">
+              <a href="https://github.com/ArteGon" target="_blank">
                 <GithubOutlined />
                 ArteGon
               </a> 
