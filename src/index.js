@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Header from './components/Header';
-import DifficultyLevel from './components/DifficultyLevel';
+import Game from './components/Game';
 import Footer from './components/Footer';
 
 
@@ -10,7 +10,7 @@ const RenderPage = () => {
   return (
     <>
       <Header />
-      <DifficultyLevel />
+      <Game />
       <Footer />
     </>
   );

@@ -9,24 +9,14 @@ class ButtonLevel extends React.Component {
     this.state = {};
   };
 
-  getButtonParam = () => {
-    const buttonsCharacters = this.props.buttonsCharacters;
-    const cardList = buttonsCharacters.imagesList;
-    const difficultGame = buttonsCharacters.difficultGame;
-    
-    this.props.selectButton(cardList, difficultGame);
-  };
-
   render() {
     return (
-      <>
-        <button
-          onClick = {this.getButtonParam}
-          className = {cl('btn', this.props.btnLevel)}
-        >
-          {this.props.buttonsCharacters.buttonText}
-        </button>  
-      </> 
+      <button
+        onClick = {() => this.props.selectButton(this.props.cardList, this.props.btnLevel)}
+        className = {cl('btn', this.props.btnLevel)}
+      >
+        {this.props.btnText}
+      </button>  
     );
   };
 };

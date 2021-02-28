@@ -7,7 +7,6 @@ import easyCards from  '../../cards/easy-level';
 import middleCards from  '../../cards/middle-level';
 import hardCards from  '../../cards/hard-level';
 
-import WrapperCards from '../WrapperCards';
 
 class DifficultyLevel extends React.Component {
   constructor(props) {
@@ -34,61 +33,35 @@ class DifficultyLevel extends React.Component {
           imagesList : hardCards  
         }
       ],
-      isLevelSelect : false,
     };
   };
-
-  selectButton = (imagesList, difficultGame) => {
-    this.setState( (state) => {
-      return {
-        isLevelSelect : !state.isLevelSelect,
-        cardList : imagesList,
-        difficultGame : difficultGame
-      };
-    });
-  };
   
-  RenderButtons = () => {
+  render() {
     const {buttonsCharacters} = this.state;
-    return (
-      <>
-        <section className= {cl('difficult-level')}>
-          <div className={ cl('container') }>
-            <div className={cl('title')}>
-              <h1>Добро пожаловать!</h1>
-              <p className={cl('text-under-title')}>Чтобы начать игру, выберите уровень сложности</p>
-            </div>  
-            <div className={ cl('difficult-level-wrap') }>
-              {
-                buttonsCharacters.map((item) => {
-                  return <ButtonLevel 
-                    key = {item.id}
-                    buttonsCharacters = {item}
-                    selectButton = {this.selectButton}
-                    btnLevel = {item.difficultGame}
-                  />
-                })
-              }
+
+    return (      
+      <section className= {cl('difficult-level')}>
+        <div className={ cl('container') }>
+          <div className={cl('title')}>
+            <h1>Добро пожаловать!</h1>
+            <p className={cl('text-under-title')}>Чтобы начать игру, выберите уровень сложности</p>
+          </div>  
+          <div className={ cl('difficult-level-wrap') }>
+            {
+              buttonsCharacters.map((item) => {
+                return <ButtonLevel 
+                  key = {item.id}
+                  buttonsCharacters = {item}
+                  btnText = {item.buttonText}
+                  btnLevel = {item.difficultGame}
+                  cardList = {item.imagesList}
+                  selectButton = {this.props.selectButton}
+                />
+              })
+            }
           </div>
         </div>  
       </section>
-    </>
-    )
-  }
-
-  render() {
-    const {isLevelSelect, cardList, difficultGame} = this.state;
-    return (     
-      <>  
-        { 
-          isLevelSelect ? 
-            <WrapperCards 
-              cardList = {cardList}
-              difficultGame = {difficultGame}
-            /> 
-            : <this.RenderButtons />
-        }
-      </> 
     )
   }
 };
