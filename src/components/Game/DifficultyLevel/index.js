@@ -1,11 +1,11 @@
 import React from 'react';
 import cl from 'classnames';
 import './style.css';
-import ButtonLevel from '../ButtonLevel';
+import ButtonLevel from './ButtonLevel';
 // Список карточек по уровням
-import easyCards from  '../../cards/easy-level';
-import middleCards from  '../../cards/middle-level';
-import hardCards from  '../../cards/hard-level';
+import easyCards from  '../../../cards/easy-level';
+import middleCards from  '../../../cards/middle-level';
+import hardCards from  '../../../cards/hard-level';
 
 
 class DifficultyLevel extends React.Component {

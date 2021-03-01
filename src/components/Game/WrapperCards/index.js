@@ -2,7 +2,7 @@ import React from 'react';
 import cl from 'classnames';
 import './style.css';
 
-import Card from '../Card';
+import Card from './Card';
 
 class WrapperCards extends React.Component {
   constructor(props) {

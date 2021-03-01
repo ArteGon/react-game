@@ -1,6 +1,6 @@
 import React from 'react';
 import cl from 'classnames';
-import '../../css/flip.css';
+import '../../../../css/flip.css';
 import './style.css';
 import { QuestionCircleOutlined, CheckSquareOutlined } from '@ant-design/icons';
 

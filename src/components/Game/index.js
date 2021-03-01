@@ -1,9 +1,9 @@
 import React from 'react';
 import cl from 'classnames';
 import './style.css';
-import DifficultyLevel from '../DifficultyLevel';
-import WrapperCards from '../WrapperCards';
-import EndGame from '../EndGame';
+import DifficultyLevel from './DifficultyLevel';
+import WrapperCards from './WrapperCards';
+import EndGame from './EndGame';
 
 
 
