@@ -10,7 +10,7 @@ class WrapperCards extends React.Component {
 
     this.state = {
       randomCardList : this.getNewCards(this.props.cardList),
-      firstCard : null
+      firstCard : null,
     };
   };
 
@@ -48,7 +48,7 @@ class WrapperCards extends React.Component {
   };
 
   clearFirstCard = () => {
-    this.setState(() => {
+    this.setState((state) => {
       return {
         firstCard : null
       };
@@ -70,7 +70,7 @@ class WrapperCards extends React.Component {
         isFindCouple : true
       }  
     });
-    this.props.subtractOneCouple();
+    this.props.gameStatistics(true);
     this.clearFirstCard();
   }
 
@@ -87,6 +87,7 @@ class WrapperCards extends React.Component {
         canFlip : true
       }  
     });
+    this.props.gameStatistics();
     this.clearFirstCard();
   };
 

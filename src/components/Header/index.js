@@ -35,11 +35,7 @@ class Header extends React.Component {
           <div className = {cl('header-blocks-wrap')}>
             <div className = {cl('header-name-game')}>
               <p>Memory Game</p>
-            </div>  
-            <div className={cl('game-statistics')}>
-              Время: 00:00:00
-              Кол-во ходов: 12
-            </div>  
+            </div>   
             <div className = {cl('header-game-options')}>
               <button
                 className={cl('btn', 'fullscreen-button')}

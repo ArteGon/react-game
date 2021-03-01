@@ -10,15 +10,31 @@ class EndGame extends React.Component {
 
     this.state = {
       showStatistics : false,
+      gameTime : this.getGameTime(),
     };
+  };
+
+  getGameTime = () => {
+    const durationGame = this.props.endGameTime - this.props.startGameTime;
+    let milliseconds = parseInt((durationGame % 1000) / 100);
+    let seconds = parseInt((durationGame / 1000) % 60);
+    let minutes = parseInt((durationGame / (1000 * 60)) % 60);
+    let hours = parseInt((durationGame / (1000 * 60 * 60)) % 24);
+
+    hours = (hours < 10) ? "0" + hours : hours;
+    minutes = (minutes < 10) ? "0" + minutes : minutes;
+    seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+    return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
   };
 
   RenderNameForm = () => {
     const onFinish = (values) => {
-      console.log('Success:', values);
       this.setState((state) => {
         return {
-          showStatistics : !state.showStatistics
+          namePlayer : values.username,
+          attemptFindCouple : this.props.attemptFindCouple,
+          showStatistics : !state.showStatistics,
         }
       })
     };
@@ -59,6 +75,7 @@ class EndGame extends React.Component {
   };
 
   RenderGameStatistics = () => {
+    const {namePlayer, gameTime, attemptFindCouple} = this.state;
     return (
       <>
         <div className={cl('title')}>
@@ -66,9 +83,9 @@ class EndGame extends React.Component {
         </div>
         <div className={cl('statistics-wrap')}>
           <div className={cl('stitistic-block')}>
-            <p>Имя:</p>
-            <p>Затраченное время:</p>
-            <p>Кол-во ходов:</p> 
+            <p>Имя: {namePlayer}</p>
+            <p>Затраченное время: {gameTime}</p>
+            <p>Кол-во ходов: {attemptFindCouple}</p> 
           </div>  
         </div> 
       </>    

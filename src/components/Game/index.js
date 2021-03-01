@@ -14,6 +14,7 @@ class Game extends React.Component {
     this.state = {
       isLevelSelect : false,
       countCoupleLeft : -1, // любое число, отличное от нуля
+      attemptFindCouple : 0
     };
   };
 
@@ -23,7 +24,8 @@ class Game extends React.Component {
         isLevelSelect : !state.isLevelSelect,
         cardList : imagesList,
         countCoupleLeft : imagesList.length,
-        difficultGame : difficultGame
+        difficultGame : difficultGame,
+        startGameTime : new Date().getTime()
       };
     });
   };
@@ -31,20 +33,40 @@ class Game extends React.Component {
   subtractOneCouple = () => {
     this.setState((state) => {
       return {
-        countCoupleLeft : state.countCoupleLeft - 1
+        countCoupleLeft : state.countCoupleLeft - 1,
+        endGameTime : new Date().getTime()
       };
     });
   };
 
+  gameStatistics = (findCouple = false) => {
+    if (findCouple) {
+      this.setState((state) => {
+        return {
+          countCoupleLeft : state.countCoupleLeft - 1,
+          endGameTime : new Date().getTime(),
+          attemptFindCouple : state.attemptFindCouple + 1
+        };
+      });
+    }else {
+      this.setState((state) => {
+        return {
+          endGameTime : new Date().getTime(),
+          attemptFindCouple : state.attemptFindCouple + 1
+        };
+      });
+    }
+  }
+
   render() {
-    const {isLevelSelect, cardList, difficultGame, countCoupleLeft} = this.state;
+    const {isLevelSelect, cardList, difficultGame, countCoupleLeft, startGameTime, endGameTime, attemptFindCouple} = this.state;
     if (countCoupleLeft !== 0) {
       return (
         isLevelSelect ? 
           <WrapperCards 
             cardList = {cardList}
             difficultGame = {difficultGame}
-            subtractOneCouple = {this.subtractOneCouple}
+            gameStatistics = {this.gameStatistics}
           /> 
           : 
           <DifficultyLevel 
@@ -53,7 +75,13 @@ class Game extends React.Component {
           />
       )    
     }else{
-      return <EndGame />
+      return (
+        <EndGame 
+          startGameTime = {startGameTime}
+          endGameTime = {endGameTime}
+          attemptFindCouple = {attemptFindCouple}
+        />
+      )
     }
   }
 };
