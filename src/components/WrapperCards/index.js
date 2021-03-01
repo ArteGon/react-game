@@ -70,6 +70,7 @@ class WrapperCards extends React.Component {
         isFindCouple : true
       }  
     });
+    this.props.subtractOneCouple();
     this.clearFirstCard();
   }
 

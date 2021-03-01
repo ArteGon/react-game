@@ -1,6 +1,7 @@
 import React from 'react';
 import cl from 'classnames';
 import '../../css/common.css';
+import 'antd/dist/antd.css';
 import './style.css';
 import { FullscreenOutlined, FullscreenExitOutlined, SettingOutlined } from '@ant-design/icons';
 

@@ -98,7 +98,7 @@ button:focus, .btn:focus, a:focus {
 .title {
   margin-bottom: 35px;
 }
-.title h1 {
+.title h1, .title h2 {
   font-size: 48px;
   text-align: center;
 }

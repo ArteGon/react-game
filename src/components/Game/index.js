@@ -12,7 +12,8 @@ class Game extends React.Component {
     super(props);
 
     this.state = {
-      isLevelSelect : false
+      isLevelSelect : false,
+      countCoupleLeft : -1, // любое число, отличное от нуля
     };
   };
 
@@ -21,28 +22,39 @@ class Game extends React.Component {
       return {
         isLevelSelect : !state.isLevelSelect,
         cardList : imagesList,
+        countCoupleLeft : imagesList.length,
         difficultGame : difficultGame
       };
     });
   };
 
+  subtractOneCouple = () => {
+    this.setState((state) => {
+      return {
+        countCoupleLeft : state.countCoupleLeft - 1
+      };
+    });
+  };
+
   render() {
-    const {isLevelSelect, cardList, difficultGame} = this.state;
-    return (
-      <>  
-        { 
-          isLevelSelect ? 
-            <WrapperCards 
-              cardList = {cardList}
-              difficultGame = {difficultGame}
-            /> 
-            : <DifficultyLevel 
-              isLevelSelect = {isLevelSelect}
-              selectButton = {this.selectButton}
-            />
-        }
-      </> 
-    )
+    const {isLevelSelect, cardList, difficultGame, countCoupleLeft} = this.state;
+    if (countCoupleLeft !== 0) {
+      return (
+        isLevelSelect ? 
+          <WrapperCards 
+            cardList = {cardList}
+            difficultGame = {difficultGame}
+            subtractOneCouple = {this.subtractOneCouple}
+          /> 
+          : 
+          <DifficultyLevel 
+            isLevelSelect = {isLevelSelect}
+            selectButton = {this.selectButton}
+          />
+      )    
+    }else{
+      return <EndGame />
+    }
   }
 };
 
