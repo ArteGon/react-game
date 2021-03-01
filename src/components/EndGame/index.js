@@ -11,6 +11,7 @@ class EndGame extends React.Component {
     this.state = {
       showStatistics : false,
       gameTime : this.getGameTime(),
+      arrayResults : []
     };
   };
 
@@ -30,13 +31,13 @@ class EndGame extends React.Component {
 
   RenderNameForm = () => {
     const onFinish = (values) => {
-      this.setState((state) => {
-        return {
-          namePlayer : values.username,
-          attemptFindCouple : this.props.attemptFindCouple,
-          showStatistics : !state.showStatistics,
-        }
-      })
+      this.setState({
+        namePlayer : values.username,
+        attemptFindCouple : this.props.attemptFindCouple,
+        showStatistics : true,
+      }, () => {
+        this.addItemInLocalStorage();
+      });      
     };
 
     return (
@@ -74,19 +75,53 @@ class EndGame extends React.Component {
     );
   };
 
+  addItemInLocalStorage = () => {
+    const difficultGame = this.props.difficultGame;
+    let arrayNeedStatistics = JSON.parse(localStorage.getItem(difficultGame)) || [];
+    const playerResult = {
+      'name' : this.state.namePlayer,
+      'attemptFindCouple' : this.state.attemptFindCouple,
+      'gameTime' : this.state.gameTime,
+    };
+    arrayNeedStatistics.push(playerResult);
+    localStorage.setItem(difficultGame, JSON.stringify(arrayNeedStatistics));
+
+    this.setState({
+      arrayResults : JSON.parse(localStorage.getItem(difficultGame)),
+    });
+  };
+
+  StatisticBlock = () => {
+    return (
+      <div className={cl('stitistic-block')}>
+        <p>Имя: {this.props.attemptFindCouple}</p>
+        <p>Затраченное время: {this.props.gameTime}</p>
+        <p>Кол-во ходов: {this.props.namePlayer}</p> 
+      </div> 
+    )
+  }
+
   RenderGameStatistics = () => {
-    const {namePlayer, gameTime, attemptFindCouple} = this.state;
+    const {arrayResults} = this.state;
     return (
       <>
         <div className={cl('title')}>
           <h2>Статистика</h2>
         </div>
         <div className={cl('statistics-wrap')}>
-          <div className={cl('stitistic-block')}>
-            <p>Имя: {namePlayer}</p>
-            <p>Затраченное время: {gameTime}</p>
-            <p>Кол-во ходов: {attemptFindCouple}</p> 
+          <div className={cl('title')}>
+            <h2>Выбранный уровень сложности: {this.props.difficultGame}</h2>
           </div>  
+          {
+            arrayResults.map((item, index) => {
+              return <this.StatisticBlock
+                key = {index}
+                namePlayer = {item.name}
+                gameTime = {item.gameTime}
+                attemptFindCouple = {item.attemptFindCouple}
+              />
+            })
+          }
         </div> 
       </>    
     );

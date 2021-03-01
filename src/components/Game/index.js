@@ -80,6 +80,7 @@ class Game extends React.Component {
           startGameTime = {startGameTime}
           endGameTime = {endGameTime}
           attemptFindCouple = {attemptFindCouple}
+          difficultGame = {difficultGame}
         />
       )
     }
