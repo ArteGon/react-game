@@ -31,6 +31,7 @@ class EndGame extends React.Component {
             showStatistics ? 
               <GameStatistics 
                 difficultGame = {this.props.difficultGame}
+                startNewGame = {this.props.startNewGame}
               /> : 
               <GameForm 
                 startGameTime = {this.props.startGameTime}

@@ -20,7 +20,9 @@ class GameOver extends React.Component {
             <h2>Вы проиграли :(</h2>
           </div>  
           <div className={cl('new-game-wrap')}>
-            <NewGame />
+            <NewGame 
+              startNewGame = {this.props.startNewGame}
+            />
           </div>  
         </div>
       </section>

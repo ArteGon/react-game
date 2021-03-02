@@ -75,6 +75,10 @@ body.black-theme {
 }
 body.black-theme .btn {
   border-color: #fff;
+  color: #000;
+}
+body.black-theme .btn:hover{
+  color: #000;
 }
 .btn::before {
   content: "";

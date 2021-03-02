@@ -1,0 +1,9 @@
+.btn.easy::before {
+  background: #32D4E2;
+}
+.btn.middle::before {
+  background: #E66A46;
+}
+.btn.hard::before {
+  background: #FACE50;
+}

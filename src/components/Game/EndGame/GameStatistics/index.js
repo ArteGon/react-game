@@ -33,7 +33,6 @@ class GameStatistics extends React.Component {
           </div> 
           {
            sortArrayResults.map((item, index) => {
-             console.log(item);
              return <StatisticBlock 
                       key = {index + 1}
                       placeNum = {index + 1}
@@ -46,7 +45,9 @@ class GameStatistics extends React.Component {
           }
         </div>
         <div className={cl('new-game-wrap')}>
-          <NewGame />
+          <NewGame 
+            startNewGame = {this.props.startNewGame}
+          />
         </div>
       </>
     )

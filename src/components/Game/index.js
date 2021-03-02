@@ -18,6 +18,24 @@ class Game extends React.Component {
     };
   };
 
+  startNewGame = () => {
+    const new_state = {
+      isLevelSelect : false,
+      countCoupleLeft : -1, // любое число, отличное от нуля
+      attemptFindCouple : 0,
+      isHardcoreMode : false,
+    };
+    const state = this.state;
+
+    for (const old_key of Object.keys(state))
+        state[old_key] = undefined;
+
+    for (const new_key of Object.keys(new_state))
+        state[new_key] = new_state[new_key];
+
+    this.setState(state);
+  }
+
   selectButton = (imagesList, difficultGame, isHardcoreMode = false) => {
     if (isHardcoreMode) {
       this.setState( (state) => {
@@ -80,6 +98,7 @@ class Game extends React.Component {
     });
   };
 
+  
   render() {
     const {isLevelSelect, cardList, difficultGame, countCoupleLeft, startGameTime, endGameTime, attemptFindCouple, isHardcoreMode, countErrors} = this.state;
     if (countCoupleLeft !== 0 && countErrors !== 0) {
@@ -107,9 +126,10 @@ class Game extends React.Component {
           attemptFindCouple = {attemptFindCouple}
           difficultGame = {difficultGame}
           isHardcoreMode = {isHardcoreMode}
+          startNewGame = {this.startNewGame}
         /> : 
         <GameOver 
-        
+          startNewGame = {this.startNewGame}        
         />
       )
     }
