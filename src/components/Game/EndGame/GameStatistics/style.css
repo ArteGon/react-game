@@ -1,13 +1,7 @@
-.end-game {
-  min-height: 100vh;
-  overflow: auto;
-  padding: 75px 0;
-  display: -ms-flexbox;
-  display: flex;
-  align-items: center;
+.statistics-wrap .title p{
+  font-size: 24px;
 }
-
-.end-game form{
-  max-width: 700px;
-  margin: auto;
+.statistics-wrap .title p span{
+  font-weight: 700;
+  font-size: 32px;
 }

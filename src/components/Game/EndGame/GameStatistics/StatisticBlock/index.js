@@ -20,10 +20,10 @@ class StatisticBlock extends React.Component {
 
     return (
       <div className={cl('statistic-block')}>
-        <p>Позиция: {placeNum}</p>
-        <p>Имя: {namePlayer}</p>
-        <p>Затраченное время: {gameTime}</p>
-        <p>Кол-во ходов: {attemptFindCouple}</p>
+        <p>Позиция: <span>{placeNum}</span></p>
+        <p>Имя: <span>{namePlayer}</span></p>
+        <p>Затраченное время: <span>{gameTime}</span></p>
+        <p>Кол-во ходов: <span>{attemptFindCouple}</span></p>
         {
           hardCoreMode ? <p>В хардкор режиме</p> : null
         }

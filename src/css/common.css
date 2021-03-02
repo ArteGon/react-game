@@ -7,11 +7,13 @@ body {
   color: #000;
   background: url(../img/bg-game.jpg);
   min-height: 100vh;
+  transition: .2s ease-in-out;
 }
 
 body.black-theme {
   background: url(../img/bg-game-black.jpg);
   color: #fff;
+  transition: .2s ease-in-out;
 }
 
 /* container */

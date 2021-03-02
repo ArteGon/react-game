@@ -15,7 +15,9 @@ class GameOver extends React.Component {
     return (
       <section className={cl('end-game')}>
         <div className={cl('container')}>
-          Ты проиграл 
+          <div className={cl('title')}>
+            <h2>Вы проиграли :(</h2>
+          </div>  
         </div>
       </section>
     )

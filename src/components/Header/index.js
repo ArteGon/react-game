@@ -39,24 +39,28 @@ class Header extends React.Component {
               <p>Memory Game</p>
             </div>   
             <div className = {cl('header-game-options')}>
-              <button
-                className={cl('btn', 'fullscreen-button')}
-                onClick = {this.onSetFullScreen}
-              >
-                {this.state.onFullScreen ? <FullscreenExitOutlined /> : <FullscreenOutlined />}
-              </button>
-              <button
-                className={cl('btn', 'setting-button')}
-              >
-                <SettingOutlined />
-              </button>
+              <div className={cl('switch-blact-theme')}>
+                <Switch 
+                  onChange={this.props.setBlackTheme} 
+                />
+                <p>Черная тема</p>
+              </div>
+              <div className={cl('fullscreen')}>
+                <button
+                  className={cl('btn', 'fullscreen-button')}
+                  onClick = {this.onSetFullScreen}
+                >
+                  {this.state.onFullScreen ? <FullscreenExitOutlined /> : <FullscreenOutlined />}
+                </button>
+              </div>
+              <div className={cl('setting')}>
+                <button
+                  className={cl('btn', 'setting-button')}
+                >
+                  <SettingOutlined />
+                </button>
+              </div>
             </div>  
-            <div className={cl('switch-blact-theme')}>
-              <p>Черная тема</p>
-              <Switch 
-                onChange={this.props.setBlackTheme} 
-              />
-            </div>
           </div>  
         </div>   
       </header> 

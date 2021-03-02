@@ -68,10 +68,10 @@ class DifficultyLevel extends React.Component {
             }
           </div>
           <div className={cl('hardcore-mode')}>
-            <p>Режим хардкор (если выбран этот режим, то у Вас будет возможность ошибиться тоолько 4 раза)</p>
             <Switch 
               onChange={this.setHardcoreMode} 
             />
+            <p>Режим хардкор (если выбран этот режим, то у Вас будет возможность ошибиться только 5 раз)</p>
           </div>  
         </div>  
       </section>

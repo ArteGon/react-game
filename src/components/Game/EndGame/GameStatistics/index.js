@@ -28,7 +28,7 @@ class GameStatistics extends React.Component {
         </div>
         <div className={cl('statistics-wrap')}>
           <div className={cl('title')}>
-            <p>Выбранный уровень сложности: {this.props.difficultGame}</p>
+            <p>Выбранный уровень сложности: <span>{this.props.difficultGame}</span></p>
           </div>  
           {
            sortArrayResults.map((item, index) => {

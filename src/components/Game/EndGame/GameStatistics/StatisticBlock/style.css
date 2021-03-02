@@ -1,13 +1,18 @@
-.end-game {
-  min-height: 100vh;
-  overflow: auto;
-  padding: 75px 0;
-  display: -ms-flexbox;
-  display: flex;
-  align-items: center;
+.statistic-block {
+  background: rgba(0, 0, 0, .75);
+  padding: 15px;
+  margin-bottom: 25px;
+  color: #fff;
 }
-
-.end-game form{
-  max-width: 700px;
+body.black-theme .statistic-block {
+  background: rgba(255, 255, 255, .75);
+  color: #000;
+}
+.statistic-block p{
+  font-size: 18px;
   margin: auto;
+}
+.statistic-block p span{
+  font-weight: 700;
+  font-size: 22px;
 }

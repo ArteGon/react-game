@@ -33,6 +33,7 @@ footer {
 .footer-blocks-wrap .date-game-create p{
   font-size: 20px;
   font-weight: 700;
+  margin: auto;
 }
 .footer-blocks-wrap .date-game-create p span svg{
   margin-right: 5px;
