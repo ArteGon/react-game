@@ -44,6 +44,7 @@ class GameForm extends React.Component {
       'name' : this.state.namePlayer,
       'attemptFindCouple' : this.state.attemptFindCouple,
       'gameTime' : this.state.gameTime,
+      'hardCoreMode' : this.props.isHardcoreMode
     };
     arrayNeedStatistics.unshift(playerResult);
     if (arrayNeedStatistics.length > 10) {

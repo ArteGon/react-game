@@ -32,12 +32,14 @@ class GameStatistics extends React.Component {
           </div>  
           {
            sortArrayResults.map((item, index) => {
+             console.log(item);
              return <StatisticBlock 
                       key = {index + 1}
                       placeNum = {index + 1}
                       namePlayer = {item.name}
                       gameTime = {item.gameTime}
                       attemptFindCouple = {item.attemptFindCouple}
+                      isHardcoreMode = {item.hardCoreMode}
                     />
            }) 
           }

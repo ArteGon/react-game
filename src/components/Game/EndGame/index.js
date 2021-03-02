@@ -38,6 +38,7 @@ class EndGame extends React.Component {
                 showStatistics = {this.showStatistics} 
                 difficultGame = {this.props.difficultGame}
                 attemptFindCouple = {this.props.attemptFindCouple}
+                isHardcoreMode = {this.props.isHardcoreMode}
               />
           } 
         </div>
