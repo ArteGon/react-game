@@ -40,7 +40,6 @@ class WrapperCards extends React.Component {
   };
 
   getFirstCard = (card) => {
-    console.log(card);
     this.setState(() => {
       return {
         firstCard : card

@@ -38,8 +38,6 @@ class RenderPage extends React.Component {
 };
 
 ReactDOM.render(
-  <React.StrictMode>
-    <RenderPage />
-  </React.StrictMode>,
+    <RenderPage />,
   document.getElementById('root')
 );

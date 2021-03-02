@@ -5,6 +5,7 @@ import 'antd/dist/antd.css';
 import './style.css';
 import { FullscreenOutlined, FullscreenExitOutlined, SettingOutlined } from '@ant-design/icons';
 import { Switch } from 'antd';
+import Music from '../Music';
 
 class Header extends React.Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class Header extends React.Component {
 
     this.state = {
       onFullScreen : false,
-      isBlackTheme : false
+      isBlackTheme : false,
+      isSoundSetting : false
     };
   };
   
@@ -30,7 +32,27 @@ class Header extends React.Component {
     });
   };
 
+  showSoundSetting = () => {
+    this.setState({
+      isSoundSetting: true, 
+    })
+  };
+
+  handleOk = () => {
+   this.setState({
+    isModalVisible: false, 
+   })
+  };
+
+  handleCancel = () => {
+    this.setState({
+      isModalVisible: false, 
+    })
+  };
+
   render() {
+    const {isSoundSetting} = this.state;
+
     return (
       <header>
         <div className={cl('container')}>
@@ -38,7 +60,15 @@ class Header extends React.Component {
             <div className = {cl('header-name-game')}>
               <p>Memory Game</p>
             </div>   
-            <div className = {cl('header-game-options')}>
+            <div className = {
+              cl(
+                'header-game-options',
+                {
+                  ['hidden'] : isSoundSetting,
+                }
+                )
+              }
+            >
               <div className={cl('switch-blact-theme')}>
                 <Switch 
                   onChange={this.props.setBlackTheme} 
@@ -56,10 +86,21 @@ class Header extends React.Component {
               <div className={cl('setting')}>
                 <button
                   className={cl('btn', 'setting-button')}
+                  onClick={this.showSoundSetting}
                 >
                   <SettingOutlined />
                 </button>
-              </div>
+              </div>  
+            </div>
+            <div className={
+              cl(
+                'header-sound-options',
+                {
+                  ['show'] : isSoundSetting,
+                }
+              )
+            }>
+              <Music />
             </div>  
           </div>  
         </div>   
