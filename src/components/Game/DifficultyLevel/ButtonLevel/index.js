@@ -12,7 +12,7 @@ class ButtonLevel extends React.Component {
   render() {
     return (
       <button
-        onClick = {() => this.props.selectButton(this.props.cardList, this.props.btnLevel)}
+        onClick = {() => this.props.selectButton(this.props.cardList, this.props.btnLevel, this.props.isHardcoreMode)}
         className = {cl('btn', this.props.btnLevel)}
       >
         {this.props.btnText}

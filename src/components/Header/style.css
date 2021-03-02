@@ -28,6 +28,7 @@ header {
 .header-blocks-wrap .header-name-game p {
   font-size: 48px;
   font-weight: 700;
+  margin: auto;
 }
 
 .header-blocks-wrap .header-game-options button.fullscreen-button{

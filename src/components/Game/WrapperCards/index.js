@@ -88,6 +88,9 @@ class WrapperCards extends React.Component {
       }  
     });
     this.props.gameStatistics();
+    if (this.props.isHardcoreMode) {
+      this.props.wrongMove();
+    };
     this.clearFirstCard();
   };
 

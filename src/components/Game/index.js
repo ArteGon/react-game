@@ -4,6 +4,7 @@ import './style.css';
 import DifficultyLevel from './DifficultyLevel';
 import WrapperCards from './WrapperCards';
 import EndGame from './EndGame';
+import GameOver from './GameOver';
 
 
 
@@ -14,20 +15,35 @@ class Game extends React.Component {
     this.state = {
       isLevelSelect : false,
       countCoupleLeft : -1, // любое число, отличное от нуля
-      attemptFindCouple : 0
+      attemptFindCouple : 0,
+      isHardcoreMode : false,
     };
   };
 
-  selectButton = (imagesList, difficultGame) => {
-    this.setState( (state) => {
-      return {
-        isLevelSelect : !state.isLevelSelect,
-        cardList : imagesList,
-        countCoupleLeft : imagesList.length,
-        difficultGame : difficultGame,
-        startGameTime : new Date().getTime()
-      };
-    });
+  selectButton = (imagesList, difficultGame, isHardcoreMode = false) => {
+    if (isHardcoreMode) {
+      this.setState( (state) => {
+        return {
+          isLevelSelect : !state.isLevelSelect,
+          cardList : imagesList,
+          countCoupleLeft : imagesList.length,
+          difficultGame : difficultGame,
+          startGameTime : new Date().getTime(),
+          isHardcoreMode : !state.isHardcoreMode,
+          countErrors : 5
+        };
+      });
+    }else {
+      this.setState( (state) => {
+        return {
+          isLevelSelect : !state.isLevelSelect,
+          cardList : imagesList,
+          countCoupleLeft : imagesList.length,
+          difficultGame : difficultGame,
+          startGameTime : new Date().getTime()
+        };
+      });
+    };
   };
 
   subtractOneCouple = () => {
@@ -55,18 +71,28 @@ class Game extends React.Component {
           attemptFindCouple : state.attemptFindCouple + 1
         };
       });
-    }
-  }
+    };
+  };
+
+  wrongMove = () => {
+    this.setState((state) => {
+      return {
+        countErrors : state.countErrors - 1,
+      };
+    });
+  };
 
   render() {
-    const {isLevelSelect, cardList, difficultGame, countCoupleLeft, startGameTime, endGameTime, attemptFindCouple} = this.state;
-    if (countCoupleLeft !== 0) {
+    const {isLevelSelect, cardList, difficultGame, countCoupleLeft, startGameTime, endGameTime, attemptFindCouple, isHardcoreMode, countErrors} = this.state;
+    if (countCoupleLeft !== 0 && countErrors !== 0) {
       return (
         isLevelSelect ? 
           <WrapperCards 
             cardList = {cardList}
             difficultGame = {difficultGame}
             gameStatistics = {this.gameStatistics}
+            wrongMove = {this.wrongMove}
+            isHardcoreMode = {isHardcoreMode}
           /> 
           : 
           <DifficultyLevel 
@@ -76,11 +102,16 @@ class Game extends React.Component {
       )    
     }else{
       return (
+        countErrors !== 0 ?
         <EndGame 
           startGameTime = {startGameTime}
           endGameTime = {endGameTime}
           attemptFindCouple = {attemptFindCouple}
           difficultGame = {difficultGame}
+          isHardcoreMode = {isHardcoreMode}
+        /> : 
+        <GameOver 
+        
         />
       )
     }

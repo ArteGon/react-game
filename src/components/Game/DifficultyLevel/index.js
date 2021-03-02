@@ -6,6 +6,7 @@ import ButtonLevel from './ButtonLevel';
 import easyCards from  '../../../cards/easy-level';
 import middleCards from  '../../../cards/middle-level';
 import hardCards from  '../../../cards/hard-level';
+import { Switch } from 'antd';
 
 
 class DifficultyLevel extends React.Component {
@@ -33,11 +34,16 @@ class DifficultyLevel extends React.Component {
           imagesList : hardCards  
         }
       ],
+      isHardcoreMode : false,
     };
   };
-  
+
+  setHardcoreMode = value => {
+    this.setState({ isHardcoreMode: value });
+  };
+
   render() {
-    const {buttonsCharacters} = this.state;
+    const {buttonsCharacters, isHardcoreMode} = this.state;
 
     return (      
       <section className= {cl('difficult-level')}>
@@ -56,10 +62,17 @@ class DifficultyLevel extends React.Component {
                   btnLevel = {item.difficultGame}
                   cardList = {item.imagesList}
                   selectButton = {this.props.selectButton}
+                  isHardcoreMode = {isHardcoreMode}
                 />
               })
             }
           </div>
+          <div className={cl('hardcore-mode')}>
+            <p>Режим хардкор (если выбран этот режим, то у Вас будет возможность ошибиться тоолько 4 раза)</p>
+            <Switch 
+              onChange={this.setHardcoreMode} 
+            />
+          </div>  
         </div>  
       </section>
     )
