@@ -11,15 +11,11 @@ class Header extends React.Component {
     };
   };
 
-  beginNewGame = () => {
-    console.log(1);
-  };
-
   render() {
     return (
       <button
-        onClick = {this.beginNewGame}
-        className = {cl('btn')}
+        onClick = {() => document.location.reload()}
+        className = {cl('btn', 'btn-new-game')}
       >
         Новая игра
       </button>

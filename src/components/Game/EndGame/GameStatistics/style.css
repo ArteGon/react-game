@@ -5,3 +5,13 @@
   font-weight: 700;
   font-size: 32px;
 }
+
+
+.statistics-wrap ~ .new-game-wrap{
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 35px;
+}

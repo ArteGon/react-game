@@ -1,0 +1,14 @@
+.game-over{
+  min-height: 100vh;
+  overflow: auto;
+  padding: 75px 0;
+  display: flex;
+  align-items: center;
+}
+.game-over .new-game-wrap{
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}

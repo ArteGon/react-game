@@ -1,7 +1,7 @@
 header {
   width: 100% !important;
   height: 75px;
-  background: rgb(50, 212, 226, .5);
+  background: rgb(50, 212, 226, 1);
   padding-bottom: 0;
   z-index: 999;
   display: -ms-flexbox;

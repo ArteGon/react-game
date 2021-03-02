@@ -6,8 +6,6 @@ import WrapperCards from './WrapperCards';
 import EndGame from './EndGame';
 import GameOver from './GameOver';
 
-
-
 class Game extends React.Component {
   constructor(props) {
     super(props);
@@ -77,7 +75,7 @@ class Game extends React.Component {
   wrongMove = () => {
     this.setState((state) => {
       return {
-        countErrors : state.countErrors - 1,
+        countErrors : state.countErrors > 0 ? state.countErrors - 1 : 0,
       };
     });
   };

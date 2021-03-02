@@ -2,6 +2,7 @@ import React from 'react';
 import cl from 'classnames';
 import './style.css';
 import StatisticBlock from './StatisticBlock';
+import NewGame from '../../../NewGame';
 
 class GameStatistics extends React.Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class GameStatistics extends React.Component {
         <div className={cl('statistics-wrap')}>
           <div className={cl('title')}>
             <p>Выбранный уровень сложности: <span>{this.props.difficultGame}</span></p>
-          </div>  
+          </div> 
           {
            sortArrayResults.map((item, index) => {
              console.log(item);
@@ -43,6 +44,9 @@ class GameStatistics extends React.Component {
                     />
            }) 
           }
+        </div>
+        <div className={cl('new-game-wrap')}>
+          <NewGame />
         </div>
       </>
     )
