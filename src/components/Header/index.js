@@ -4,13 +4,15 @@ import '../../css/common.css';
 import 'antd/dist/antd.css';
 import './style.css';
 import { FullscreenOutlined, FullscreenExitOutlined, SettingOutlined } from '@ant-design/icons';
+import { Switch } from 'antd';
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      onFullScreen : false
+      onFullScreen : false,
+      isBlackTheme : false
     };
   };
   
@@ -49,6 +51,12 @@ class Header extends React.Component {
                 <SettingOutlined />
               </button>
             </div>  
+            <div className={cl('switch-blact-theme')}>
+              <p>Черная тема</p>
+              <Switch 
+                onChange={this.props.setBlackTheme} 
+              />
+            </div>
           </div>  
         </div>   
       </header> 

@@ -2,6 +2,7 @@ import React from 'react';
 import cl from 'classnames';
 import './style.css';
 import footerRsLogo from './img/footer-rs-logo.svg';
+import footerRsLogoWhite from './img/footer-rs-logo-white.png';
 import { GithubOutlined, CopyrightOutlined } from '@ant-design/icons';
 
 class Footer extends React.Component {
@@ -18,7 +19,7 @@ class Footer extends React.Component {
           <div className={cl('footer-blocks-wrap')}>
             <div className={cl('footer-rs-logo')}>
               <a href="https://rs.school/js/" target="_blank">
-                <img src={footerRsLogo} />
+                <img src={this.props.isBlackTheme ? footerRsLogoWhite : footerRsLogo} />
               </a>   
             </div>  
             <div className={cl('date-game-create')}>
