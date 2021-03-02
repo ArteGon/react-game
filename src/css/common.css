@@ -95,6 +95,12 @@ button:focus, .btn:focus, a:focus {
   outline: none;
   box-shadow: none;
 }
+@media (max-width: 767px) {
+  .btn {
+    height: 45px;
+    font-size: 14px;
+  }
+}
 
 /* title */
 .title {
@@ -110,4 +116,15 @@ body.black-theme .title h1, body.black-theme .title h2 {
 .title p.text-under-title {
   font-size: 24px;
   text-align: center;
+}
+@media (max-width: 767px) {
+  .title {
+    margin-bottom: 15px;
+  }
+  .title h1, .title h2 {
+    font-size: 32px;
+  }
+  .title p.text-under-title {
+    font-size: 18px;
+  }
 }

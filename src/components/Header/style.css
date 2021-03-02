@@ -65,3 +65,14 @@ header {
   font-size: 28px;
   padding: 0;
 }
+
+@media (max-width: 767px){
+	.header-blocks-wrap .header-name-game p {
+    font-size: 32px;
+  }
+}
+@media (max-width: 575px){
+	.header-blocks-wrap .header-name-game p {
+    font-size: 24px;
+  }
+}

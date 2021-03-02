@@ -62,3 +62,19 @@ body.black-theme .footer-blocks-wrap .footer-link-repo a{
 :full-screen footer{/*Opera 12.15-, Blink, w3c standard*/
   display: none;
 }
+
+
+@media (max-width: 767px){
+	
+}
+@media (max-width: 575px){
+  .footer-blocks-wrap .footer-rs-logo img {
+    height: 40px;
+  }
+	.footer-blocks-wrap .date-game-create p{
+    font-size: 18px;
+  }
+  .footer-blocks-wrap .footer-link-repo a{
+    font-size: 18px;
+  }
+}
