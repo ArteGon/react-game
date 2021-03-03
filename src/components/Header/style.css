@@ -41,9 +41,6 @@ header {
   justify-content: center;
   align-items: center;
 }
-.header-blocks-wrap .header-game-options.hidden {
-  display: none;
-}
 .header-blocks-wrap .header-game-options .switch-blact-theme {
   text-align: center;
   margin-right: 15px;
@@ -67,17 +64,6 @@ header {
   border: none;
   font-size: 28px;
   padding: 0;
-}
-
-.header-blocks-wrap .header-sound-options {
-  display: none;
-}
-.header-blocks-wrap .header-sound-options.show {
-  flex-direction: row;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
 }
 
 @media (max-width: 767px){

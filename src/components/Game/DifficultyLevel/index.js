@@ -36,9 +36,17 @@ class DifficultyLevel extends React.Component {
       ],
       isHardcoreMode : false,
     };
+    this.audio = new Audio('http://boobooka.com/wp-content/uploads/2017/07/odin-klik-myshki.mp3');
+  };
+
+  clickButton = () => {
+    const soundWrap = document.getElementById('sounds-setting');
+    this.audio.volume = soundWrap ? (soundWrap.value / 100) : 0.5;
+    this.audio.play();
   };
 
   setHardcoreMode = value => {
+    this.clickButton();
     this.setState({ isHardcoreMode: value });
   };
 

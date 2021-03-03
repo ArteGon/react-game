@@ -6,11 +6,12 @@ class Music extends React.Component {
     super(props);
     this.state = {
       volume : 0.5,
-      isVolumeMusic : true
+      isVolumeMusic : true,
     }
-    this.url = "https://ajoyib.net/uploads/files/02-2021/egor-krid-golos.mp3";
-    this.audio = new Audio(this.url);
+    this.audio = new Audio(require(`./egor-krig-golosy.mp3`).default);
+    console.log(this.audio);
     this.audio.autoplay = true;
+    this.audio.loop = true;
   }
 
   toggleTurnMusic = () => {
@@ -44,6 +45,7 @@ class Music extends React.Component {
   };
 
   render() {
+    const {volume} = this.state;
     return (
       <div>
         <p>Музыка в игре</p>
@@ -54,8 +56,8 @@ class Music extends React.Component {
         </button>
         <input 
           type="range" 
+          value={Math.round(volume * 100)} 
           onChange={(event) => this.handleVolume(event.target.value / 100)}
-          value={Math.round(this.state.volume * 100)} 
         />
       </div>
     );

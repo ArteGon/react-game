@@ -4,8 +4,9 @@ import '../../css/common.css';
 import 'antd/dist/antd.css';
 import './style.css';
 import { FullscreenOutlined, FullscreenExitOutlined, SettingOutlined } from '@ant-design/icons';
-import { Switch } from 'antd';
+import { Switch, Modal } from 'antd';
 import Music from '../Music';
+import Sounds from '../Sounds';
 
 class Header extends React.Component {
   constructor(props) {
@@ -14,11 +15,20 @@ class Header extends React.Component {
     this.state = {
       onFullScreen : false,
       isBlackTheme : false,
-      isSoundSetting : false
+      setIsModalVisible : false
     };
+
+    this.audio = new Audio('http://boobooka.com/wp-content/uploads/2017/07/odin-klik-myshki.mp3');
   };
   
+  clickButton = () => {
+    const soundWrap = document.getElementById('sounds-setting');
+    this.audio.volume = soundWrap ? (soundWrap.value / 100) : 0.5;
+    this.audio.play();
+  };
+
   onSetFullScreen = async () => {
+    this.clickButton();
     if (document.fullscreenElement) {
       document.exitFullscreen();
     } else {
@@ -32,26 +42,22 @@ class Header extends React.Component {
     });
   };
 
-  showSoundSetting = () => {
+  showModal = () => {
+    this.clickButton();
     this.setState({
-      isSoundSetting: true, 
-    })
-  };
-
-  handleOk = () => {
-   this.setState({
-    isModalVisible: false, 
-   })
+      setIsModalVisible: true, 
+    });
   };
 
   handleCancel = () => {
+    this.clickButton();
     this.setState({
-      isModalVisible: false, 
-    })
+      setIsModalVisible: false, 
+    });
   };
 
   render() {
-    const {isSoundSetting} = this.state;
+    const {setIsModalVisible} = this.state;
 
     return (
       <header>
@@ -60,18 +66,11 @@ class Header extends React.Component {
             <div className = {cl('header-name-game')}>
               <p>Memory Game</p>
             </div>   
-            <div className = {
-              cl(
-                'header-game-options',
-                {
-                  ['hidden'] : isSoundSetting,
-                }
-                )
-              }
-            >
+            <div className = {cl('header-game-options')}>
               <div className={cl('switch-blact-theme')}>
                 <Switch 
                   onChange={this.props.setBlackTheme} 
+                  onClick={this.clickButton}
                 />
                 <p>Черная тема</p>
               </div>
@@ -86,22 +85,21 @@ class Header extends React.Component {
               <div className={cl('setting')}>
                 <button
                   className={cl('btn', 'setting-button')}
-                  onClick={this.showSoundSetting}
+                  onClick={this.showModal}
                 >
                   <SettingOutlined />
                 </button>
               </div>  
             </div>
-            <div className={
-              cl(
-                'header-sound-options',
-                {
-                  ['show'] : isSoundSetting,
-                }
-              )
-            }>
+            <Modal 
+              title="Настроки аудио" 
+              visible={setIsModalVisible} 
+              onCancel={this.handleCancel}
+              footer={null}
+            >
               <Music />
-            </div>  
+              <Sounds />
+            </Modal>
           </div>  
         </div>   
       </header> 
