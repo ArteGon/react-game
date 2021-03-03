@@ -1,4 +1,6 @@
 import React from 'react';
+import cl from 'classnames';
+import './style.css';
 import { SoundFilled} from '@ant-design/icons';
 
 class Sounds extends React.Component {
@@ -40,11 +42,17 @@ class Sounds extends React.Component {
   };
 
   render() {
-    const {volume} = this.state;
+    const {volume, isVolumeSound} = this.state;
     return (
-      <div>
+      <div className={cl('all-setting-sound')}>
         <p>Звуки в игре</p>
-        <button 
+        <button
+          className={cl(
+            'setting-sound',
+            {
+              ['sound-off'] : !isVolumeSound || volume === 0
+            }
+          )} 
           onClick = {this.toggleTurnSound}
         >
           <SoundFilled />
