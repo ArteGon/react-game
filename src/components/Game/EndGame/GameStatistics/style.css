@@ -1,0 +1,32 @@
+.statistics-wrap .title p{
+  font-size: 24px;
+}
+.statistics-wrap .title p span{
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.statistics-wrap ~ .new-game-wrap{
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 35px;
+}
+@media (max-width: 767px) {
+  .statistics-wrap .title p{
+    font-size: 20px;
+  }
+  .statistics-wrap .title p span{
+    font-size: 28px;
+  }
+}
+@media (max-width: 575px) {
+  .statistics-wrap .title p{
+    font-size: 18px;
+  }
+  .statistics-wrap .title p span{
+    font-size: 24px;
+  }
+}

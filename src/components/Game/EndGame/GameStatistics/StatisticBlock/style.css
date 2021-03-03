@@ -1,0 +1,31 @@
+.statistic-block {
+  background: rgba(0, 0, 0, .75);
+  padding: 15px;
+  margin-bottom: 25px;
+  color: #fff;
+}
+body.black-theme .statistic-block {
+  background: rgba(255, 255, 255, .75);
+  color: #000;
+}
+.statistic-block p{
+  font-size: 18px;
+  margin: auto;
+}
+.statistic-block p span{
+  font-weight: 700;
+  font-size: 22px;
+}
+@media (max-width: 767px) {
+  .statistic-block {
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 575px) {
+  .statistic-block p{
+    font-size: 16px;
+  }
+  .statistic-block p span{
+    font-size: 20px;
+  }
+}

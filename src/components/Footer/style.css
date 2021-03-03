@@ -1,0 +1,80 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 75px;
+  background: rgb(50, 212, 226, 1);
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+}
+.footer-blocks-wrap {
+  -ms-flex-direction: row;
+  flex-direction: row;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.footer-blocks-wrap .footer-rs-logo, .footer-blocks-wrap .date-game-create, .footer-blocks-wrap .footer-link-repo {
+  position: relative;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+.footer-blocks-wrap .footer-rs-logo img {
+  height: 50px;
+}
+
+.footer-blocks-wrap .date-game-create {
+  text-align: center;
+}
+.footer-blocks-wrap .date-game-create p{
+  font-size: 20px;
+  font-weight: 700;
+  margin: auto;
+}
+.footer-blocks-wrap .date-game-create p span svg{
+  margin-right: 5px;
+}
+
+.footer-blocks-wrap .footer-link-repo {
+  text-align: right;
+}
+.footer-blocks-wrap .footer-link-repo a{
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+}
+body.black-theme .footer-blocks-wrap .footer-link-repo a{
+  color: #fff;
+}
+
+/* Убираем footer при полном экране */
+:-webkit-full-screen footer{/*WebKit, Opera 15+*/
+  display: none;
+}
+:-moz-full-screen footer{/*FireFox*/
+  display: none;
+}
+:full-screen footer{/*Opera 12.15-, Blink, w3c standard*/
+  display: none;
+}
+
+
+@media (max-width: 767px){
+	
+}
+@media (max-width: 575px){
+  .footer-blocks-wrap .footer-rs-logo img {
+    height: 40px;
+  }
+	.footer-blocks-wrap .date-game-create p{
+    font-size: 18px;
+  }
+  .footer-blocks-wrap .footer-link-repo a{
+    font-size: 18px;
+  }
+}

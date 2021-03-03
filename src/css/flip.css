@@ -1,0 +1,40 @@
+.flip-block {
+  width: 125px;
+  height: 125px;  
+  position: relative;
+  z-index: 1;
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  z-index: -1;
+}
+
+.is-flip .flip-card {
+  transform: rotateY(-180deg);
+}
+
+.is-flip .front-side{
+  display: none !important;
+}
+
+.front-side, .back-side {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.back-side {
+  transform: rotateY(180deg);
+  display: none;
+}
+
+.is-flip .back-side{
+  display: block;
+}
